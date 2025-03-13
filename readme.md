@@ -2,7 +2,7 @@
 A countdown timer with a clock visualization built using HTML, CSS, and TypeScript.
 
 ## Demo
-https://hao-317.github.io/SuperTimer/
+https://hao-317.github.io/Project_SuperTimer/
 
 ## Features
 - Set a countdown in minutes
@@ -13,4 +13,4 @@ https://hao-317.github.io/SuperTimer/
 ## Installation
 1. Clone the repository:
    ```bash
-   git clone https://github.com/HAO-317/SuperTimer
+   git clone https://github.com/HAO-317/Project_SuperTimer
