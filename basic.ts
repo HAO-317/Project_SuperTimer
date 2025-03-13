@@ -6,13 +6,13 @@ interface Countdown {
   isPaused: boolean; 
 }
 
-const timeDisplay = document.getElementById("time") as HTMLDivElement;
-const minutesInput = document.getElementById("minutes") as HTMLInputElement;
-const startButton = document.getElementById("start-button") as HTMLButtonElement;
-const pauseButton = document.getElementById("pause-button") as HTMLButtonElement;
-const restartButton = document.getElementById("restart-button") as HTMLButtonElement;
-const clockCanvas = document.getElementById("clock") as HTMLCanvasElement;
-const ctx = clockCanvas.getContext("2d") as CanvasRenderingContext2D;
+const timeDisplay = document.getElementById("time");
+const minutesInput = document.getElementById("minutes");
+const startButton = document.getElementById("start-button");
+const pauseButton = document.getElementById("pause-button");
+const restartButton = document.getElementById("restart-button");
+const clockCanvas = document.getElementById("clock");
+const ctx = clockCanvas.getContext("2d");
 
 const tickTock = new Audio('tick-tock.wav');
 const clockEnd = new Audio('clock.wav');
@@ -34,7 +34,7 @@ function formatTime(seconds: number): string {
   return `${hours.toString().padStart(2, "0")}:${mins.toString().padStart(2, "0")}:${secs.toString().padStart(2, "0")}`;
 }
 
-function drawClocks(seconds: number): void {
+function drawClocks(seconds: number){
   if (!ctx) return;
   const hours = Math.floor(seconds / 3600);
   const minutes = Math.floor((seconds % 3600) / 60);
@@ -95,7 +95,7 @@ function drawClocks(seconds: number): void {
   });
 }
 
-function validateInput(): void {
+function validateInput(){
   const maxMinutes = (13 * 60);
   const minutes = parseInt(minutesInput.value);
   if (minutes > maxMinutes) {
@@ -104,7 +104,7 @@ function validateInput(): void {
   }
 }
 
-function startCountdown(): void {
+function startCountdown(){
   clickSound.play();
   if (countdown.intervalId || countdown.isPaused) return; 
   const minutes = parseInt(minutesInput.value);
@@ -137,7 +137,7 @@ function startCountdown(): void {
 }
 
 
-function pauseCountdown(): void {
+function pauseCountdown(){
   clickSound.play();
   if (countdown.intervalId) {
     
@@ -169,7 +169,7 @@ function pauseCountdown(): void {
   }
 }
 
-function restartCountdown(): void {
+function restartCountdown(){
   clickSound.play();
   if (countdown.intervalId) {
     clearInterval(countdown.intervalId);
